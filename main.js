@@ -44,21 +44,18 @@ document.addEventListener("DOMContentLoaded", function (){
 }
 )
 
-
 function addToTbody(arr){
    arr.forEach((elem) => {
-    tableBody.innerHTML += `
-    <tr>
-    <td>${elem.id}</td>
-    <td>${elem.name}</td>
-    <td>${elem.age}</td>
-    <td>${elem.department}</td>
-    <td>${elem.role.title}</td>
-    <td>${elem.role.level}</td>
-    <td>${elem.contact.email}</td>
-    <td>${elem.contact.phone}</td>
-    <td>${elem.skills.join(', ')}</td>
-</tr>
-    `
+    let tr = document.createElement("tr");
+    tableBody.appendChild(tr);
+    tr.appendChild(document.createElement('td')).textContent = elem.id;
+    tr.appendChild(document.createElement('td')).textContent = elem.name;
+    tr.appendChild(document.createElement('td')).textContent = elem.age;
+    tr.appendChild(document.createElement('td')).textContent = elem.department;
+    tr.appendChild(document.createElement('td')).textContent = elem.role.title;
+    tr.appendChild(document.createElement('td')).textContent = elem.role.level;
+    tr.appendChild(document.createElement('td')).textContent = elem.contact.email;
+    tr.appendChild(document.createElement('td')).textContent = elem.contact.phone;
+    tr.appendChild(document.createElement('td')).textContent = elem.skills.join(', ');
    })
 }
